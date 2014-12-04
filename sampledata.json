@@ -1,0 +1,30 @@
+[
+  {
+    "name":"60\" plasma TV",
+    "location":"Tenderloin Back Alley",
+    "date":"Dec 5",
+    "type":"thing",
+    "href":"http://sfbay.craigslist.org/pen/zip/4790170838.html"
+  },
+  {
+    "name": "Taylor Swift Concert",
+    "location": "San Rafael",
+    "date": "Dec 5",
+    "type": "event",
+    "href": "http://m.yelp.com/biz/4kMBvIEWPxWkWKFN__8SxQ"
+  },
+  {
+    "name": "Free food and stuff",
+    "location": "Danville/San Ramon",
+    "date": "Dec 5",
+    "type": "food",
+    "href": "http://m.yelp.com/biz/4kMBvIEWPxWkWKFN__8SxQ"
+  },
+  {
+    "name": "Museum",
+    "location": "Belmont",
+    "date": "Dec 5",
+    "type": "event",
+    "href": "http://m.yelp.com/biz/4kMBvIEWPxWkWKFN__8SxQ"
+  }
+]
