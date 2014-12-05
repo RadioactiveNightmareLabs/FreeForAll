@@ -38,7 +38,30 @@
   transition-duration:0;
 }
 
-snap-content {
+.snap-content {
   background-color: rgb(245,245,245);
   border-left: 1px solid #ccc;
 }
+
+.snap-drawer {
+background: #323949;
+background-image: initial;
+background-position-x: initial;
+background-position-y: initial;
+background-size: initial;
+background-repeat-x: initial;
+background-repeat-y: initial;
+background-attachment: initial;
+background-origin: initial;
+background-clip: initial;
+background-color: rgb(50, 57, 73);
+color: #eee;
+}
+
+body, html{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: rgb(245,245,245);
+}
+

@@ -1,10 +1,18 @@
 //Seek Nature App
-angular.module('seekNature',[
-  'seekNature.locator',
-  'seekNature.spaces',
+angular.module('seekFreeStuff',[
+  'seekFreeStuff.locator',
+  'seekFreeStuff.spaces',
   'ui.router',
   'snap'
   ])
+//snapper options
+  .config(function(snapRemoteProvider) {
+    snapRemoteProvider.globalOptions = {
+      disable: 'right',
+      hyperextensible: 'false',
+      // ... others options
+    }
+  })
 // use HTML5 Geolocation API to grab current position
 .config(function($urlRouterProvider, $httpProvider, $stateProvider) {
   $urlRouterProvider.otherwise('/spaces');

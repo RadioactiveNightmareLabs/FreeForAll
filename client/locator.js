@@ -1,4 +1,4 @@
-angular.module('seekNature.locator',[])
+angular.module('seekFreeStuff.locator',[])
 .factory('Locator', function (){
 
   var getLocation = function (successHandler, failureHandler){
