@@ -1,21 +1,22 @@
-angular.module('freeForAll.services', [])
+angular.module('seekFreeStuff.services', [])
 
 .factory('getData', function ($http) {
 
-  var data = {};
+  var freeStuff = {};
 
-  var getLinks = function(){
+  var getFreeData = function(){
     return $http({
       method: 'GET',
-      url: '/getData'
+      url: 'http://free4allapi.herokuapp.com/things'
     })
     .then(function (res) {
-      data.results = res.data;
+      console.log('haz data: ', res);
+      freeStuff.results = res.data;
     });
   };
 
   return {
-    data: data,
-    getLinks: getLinks
+    data: freeStuff,
+    getFreeData: getFreeData
   };
 })
