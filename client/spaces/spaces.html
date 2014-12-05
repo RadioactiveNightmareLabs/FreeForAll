@@ -1,5 +1,5 @@
 <table class="table table-striped table-hover" ng-controller='SpacesController'>
-  <thead>Nature Near You</thead>
+  <thead>Free Stuff Near You</thead>
   <tbody ng-animate="'animate'" class="table table-striped repeat-animation" ng-repeat="park in data | orderBy:'walkingTime'">
     <tr><td class="parkName"> {{ park.name }} </td><td class="time">{{ park.walkingTime }} mins ({{park.walkingDistance}})</td><tr>
   </tbody>
