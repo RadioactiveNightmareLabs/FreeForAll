@@ -1,5 +1,6 @@
 angular.module('seekFreeStuff.spaces', [])
 .controller('SpacesController', function ($scope, Locator) {
+  $scope.categories = ["Events", "Free stuff", "Art & museums"];
   $scope.data = [];
   $scope.currentLocation;
   $scope.distanceBetween = function(a, b){
