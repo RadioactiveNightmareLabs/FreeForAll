@@ -38,6 +38,8 @@ var job = function (time, cb) {
 // schedule every minute
 job('* * * * * *', function(){
   console.log('hey');
+  // call API's
+  // store to database
 });
 
 
