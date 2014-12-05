@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Seek Nature</title>
+    <link href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.0/simplex/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/angular-snap.css" type="text/css" />
+  </head>
+  <body ng-app='seekNature'>
+    <h1>Seek Nature</h1>
+
+    <snap-drawer>
+      <p>Hello from drawer!</p>
+      <button snap-close>Close</button>
+    </snap-drawer>
+    <snap-content>
+      <p>Drag to open or use the toggle button</p>
+        <div ui-view></div>
+      <button snap-toggle="">Toggle</button>
+    </snap-content>
+    
+    <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
+<!--     <div ng-view></div> -->
+    
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<AIzaSyBCgGVk6a22vWMPte3jfp_u_ajHF9BWVb4>"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+    <script src="../client/bower_components/angular/angular.js"></script>
+    <script src="../client/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="../client/bower_components/jquery/jquery.js"></script>
+    <script src="../client/bower_components/underscore/underscore.js"></script>
+    <script src="snap.js" type="text/javascript" charset="utf-8"></script>
+    <script src="angular-snap.js" type="text/javascript" charset="utf-8"></script>
+    <script src="locator.js"></script>
+    <script src="app.js"></script>
+    <script src="spaces/spaces.js"></script>
+
+    
+    
+    <div id='results'></div>
+    <div id="out"></div>
+    <img src="resources/powered-by-google/powered-by-google-on-white.png">
+  </body>
+</html>
+
