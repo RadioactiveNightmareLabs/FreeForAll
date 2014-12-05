@@ -1,6 +1,5 @@
-angular.module('seekNature.spaces', [])
+angular.module('seekFreeStuff.spaces', [])
 .controller('SpacesController', function ($scope, Locator) {
-  $scope.name = "World";
   $scope.data = [];
   $scope.currentLocation;
   $scope.distanceBetween = function(a, b){
