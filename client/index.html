@@ -12,7 +12,7 @@
 
     <snap-drawer>
       <!-- <p>Hello from drawer!</p> -->
-      <button style="background:url(close.png)" id="close" snap-close></button>
+      <button style="background:url(resources/close.png)" id="close" snap-close></button>
       <div class="nav">
         <h1>Categories</h1>
         <ul>
@@ -25,7 +25,7 @@
       </div>
     </snap-drawer>
     <snap-content snap-options="opts">
-      <button style="background: url(burger.png)" id="burger" snap-toggle=""></button>
+      <button style="background: url(resources/burger.png)" id="burger" snap-toggle=""></button>
       <p>Drag to open or use the toggle button</p>
         <div ui-view></div>
     </snap-content>
@@ -39,11 +39,10 @@
     <script src="../client/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="../client/bower_components/jquery/jquery.js"></script>
     <script src="../client/bower_components/underscore/underscore.js"></script>
-    <script src="snap.js" type="text/javascript" charset="utf-8"></script>
-    <script src="angular-snap.js" type="text/javascript" charset="utf-8"></script>
-    <script src="locator.js"></script>
+    <script src="view/snap.js" type="text/javascript" charset="utf-8"></script>
+    <script src="view/angular-snap.js" type="text/javascript" charset="utf-8"></script>
+    <script src="data/data.js" type="text/javascript" charset="utf-8"></script>
     <script src="app.js"></script>
-    <script src="spaces/spaces.js"></script>
 
     
     

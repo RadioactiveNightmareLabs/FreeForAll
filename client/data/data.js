@@ -1,6 +1,6 @@
 angular.module('seekFreeStuff.data', [])
 .controller('DataController', function ($scope, Locator) {
-  $scope.categories = ["Events", "Free stuff", "Art & museums"];
+  // $scope.categories = ["Events", "Free stuff", "Art & museums"];
   // grab data from API server and put into data object on scope
   $scope.data = [];
   $scope.currentLocation;
