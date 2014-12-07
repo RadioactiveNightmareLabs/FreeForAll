@@ -3,9 +3,6 @@ angular.module('seekFreeStuff',[
   'seekFreeStuff.data',
   'ui.router',
   'snap',
-  'seekFreeStuff.getData',
-  'seekFreeStuff.services',
-  'freeFilter'
   ])
 //snapper options
   .config(function(snapRemoteProvider) {
