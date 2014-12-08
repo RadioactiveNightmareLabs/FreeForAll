@@ -6,7 +6,26 @@ angular.module('getFreeStuff.getDataController', [
 
   $scope.freeStuff = [];
   $scope.filtered = [];
-  $scope.address = 'east palo alto';
+  $scope.address = {};
+
+
+  $scope.getLocation = function () {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      geocoder = new google.maps.Geocoder();
+      var latlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+
+      geocoder.geocode({'latLng': latlng}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          // gets area of address
+          // this is liable to break because you can't guarantee same results...
+          $scope.address = results[2].address_components[0].long_name.toLowerCase();  
+          console.log('address acquired!');
+          console.log($scope);   
+          $scope.getFreeStuff();  
+        } 
+      });
+    });
+  }
 
   $scope.getFreeStuff = function (string) {
     return $http({
@@ -18,32 +37,18 @@ angular.module('getFreeStuff.getDataController', [
       angular.forEach(data, function (item) {
         $scope.freeStuff.push(item);  
       });
+
+      $scope.freeArea();
     })
   };
-
-  $scope.getLocation = function () {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      geocoder = new google.maps.Geocoder();
-      var latlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-
-      geocoder.geocode({'latLng': latlng}, function(results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-          // gets area of address
-          $scope.address = {};
-          // this is liable to break because you can't guarantee same results...
-          $scope.address = results[2].address_components[0].long_name.toLowerCase();  
-          console.log($scope);     
-        } 
-      });
-    });
-  }
 
   // get all free stuff in current location
   $scope.freeArea = function() {
     // returns true if location is matching current location
     var matching = function (currentLocation, location) {
-      var regex = new RegExp(currentLocation, 'g'); // hard coded
-      return location.match(regex) ? true : false;
+      var regex = new RegExp(currentLocation, 'g');
+      var result = location.match(regex);
+      return location.match(regex) ? result : false;
     }
 
     // loop through freeStuff
@@ -54,4 +59,7 @@ angular.module('getFreeStuff.getDataController', [
     });
     console.log($scope);
   }
+
+  // inialize on controller load
+  $scope.getLocation();
 });
