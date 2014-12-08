@@ -29,6 +29,16 @@ angular.module('getFreeStuff.getDataController', [
 
   var distanceService = new google.maps.DistanceMatrixService();
 
+  // add distance and time after arr has been populated
+  $scope.addDistanceTime = function (arr) {
+    // loop through places or events array
+    arr.forEach(function (item) {
+      // apply calculateDistance to each item
+      $scope.calculateDistance(item.location);
+    });
+
+    $scope.filteredItems = arr;
+  }
 
   // finds distance between destination position and current location
   // calculatDistance({lat: 46.5, lng: -122.5});
@@ -36,6 +46,7 @@ angular.module('getFreeStuff.getDataController', [
     // take out google maps, use data from incoming object
     var destination = new google.maps.LatLng(positionObject.lat, positionObject.lng);
 
+    // async function
     distanceService.getDistanceMatrix({
       origins: [$scope.addressCoords],
       destinations: [destination],
@@ -49,20 +60,10 @@ angular.module('getFreeStuff.getDataController', [
       positionObject['walkingTime'] = walkingTime;
       positionObject['walkingDistance'] = walkingDistance;
 
-      console.log(positionObject);
       $scope.$apply(); // not sure if this is needed
     });
   };
 
-  // add distance and time after arr has been populated
-  $scope.addDistanceTime = function (arr) {
-    // loop through places or events array
-    arr.forEach(function (item) {
-      // apply calculateDistance to each item
-      $scope.calculateDistance(item.location);
-        // add walking time and walking distance property to each item
-    });
-  }
 
   $scope.getLocation = function () {
     navigator.geolocation.getCurrentPosition(function (position) {
