@@ -8,10 +8,8 @@
     <link rel="stylesheet" href="styles/angular-snap.css" type="text/css" />
   </head>
   <body ng-app='seekFreeStuff'>
-    <!-- <h1>Seek Nature</h1> -->
 
     <snap-drawer>
-      <!-- <p>Hello from drawer!</p> -->
       <button style="background:url(resources/close.png)" id="close" snap-close></button>
       <div class="nav">
         <h1>Categories</h1>
@@ -26,12 +24,10 @@
     </snap-drawer>
     <snap-content snap-options="opts">
       <button style="background: url(resources/burger.png)" id="burger" snap-toggle=""></button>
-      <p>Drag to open or use the toggle button</p>
         <div ui-view></div>
+        <div class='test'></div>
     </snap-content>
-    
-    <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
-    <!-- <div ng-view></div> -->
+
     
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<AIzaSyBCgGVk6a22vWMPte3jfp_u_ajHF9BWVb4>"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
@@ -39,12 +35,14 @@
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="/bower_components/jquery/jquery.js"></script>
     <script src="/bower_components/underscore/underscore.js"></script>
-    <script src="/view/snap.js" type="text/javascript" charset="utf-8"></script>
-    <script src="/view/angular-snap.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/views/snap.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/views/angular-snap.js" type="text/javascript" charset="utf-8"></script>
     <script src="data/data.js" type="text/javascript" charset="utf-8"></script>
     <script src="app.js"></script>
+    <script src="controllers/getDataController.js"></script>
+    <script src="controllers/services.js"></script>
 
-    
+
     
     <div id='results'></div>
     <div id="out"></div>

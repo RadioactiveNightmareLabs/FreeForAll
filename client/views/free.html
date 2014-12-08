@@ -1,0 +1,13 @@
+<div class="freeContainer">
+  <div ng-controller="getDataController">
+    <button ng-click="getFreeStuff()">get</button>
+    <button ng-click="getLocation()">location</button>
+    <button ng-click="freeArea()">filter by Area</button>
+    <div class="itemContainer">
+      <div ng-repeat="object in filtered">
+        <div> {{ object.name }} </div>
+        <div> {{ object.location }} </div>
+      </div>
+    </div>
+  </div>
+</div>
