@@ -5,7 +5,8 @@ angular.module('getFreeStuff.getDataController', [
 .controller('getDataController', function ($scope, $http) {
 
   $scope.freeStuff = [];
-  $scope.filtered = [];
+  $scope.filter = {};
+  $scope.filteredItems = [];
   $scope.address = {};
 
 
@@ -58,6 +59,20 @@ angular.module('getFreeStuff.getDataController', [
       }
     });
     console.log($scope);
+  }
+
+  // filters freeStuff array
+  // ex.
+  // $scope.freeStuff = [{name: 'party', type: 'event'},{name: 'unwanted dog', type: 'thing'},{name: 'half baked idea', type: 'food'}];
+  // $scope.filter = { events: 'event' , food: 'food'}
+  // $scope.filterize (array, filter)
+  // -> [{name: 'party', type: 'event'}, {name: 'half baked idea', type: 'food'}]
+  $scope.filterize = function (array, filter) {
+    array.forEach(function (item) {
+      if (filter[item.type]) {
+        $scope.filteredItems.push(item);
+      }
+    })
   }
 
   // inialize on controller load
