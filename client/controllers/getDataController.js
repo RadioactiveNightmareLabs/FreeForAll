@@ -5,10 +5,64 @@ angular.module('getFreeStuff.getDataController', [
 .controller('getDataController', function ($scope, $http) {
 
   $scope.freeStuff = [];
+  $scope.freePlaces = [{name: "foo", location: {lat: 45, lng: -122}}];
+  $scope.freeEvents = [];
+
+
+  $scope.data = [];
+  $scope.currentLocation = {};
+
   $scope.filter = {};
   $scope.filteredItems = [];
   $scope.address = {};
 
+  // finds distance between destination position and current location
+  // calculatDistance({lat: 46, lng: -122});
+  $scope.calculateDistance = function (positionObject) {
+    // take out google maps, use data from incoming object
+    var destination = new google.maps.LatLng(positionObject.geometry.location.k, positionObject.geometry.location.B);
+    // ex
+    // {lat: 124, lng: 334}
+
+    distanceService.getDistanceMatrix({
+      origins: [$scope.address],
+      destinations: [destination],
+      travelMode: google.maps.TravelMode.WALKING,
+    }, function(response, status) {
+      var result = response.rows[0].elements[0];
+      
+      var walkingDistance = result.distance.text;
+      var walkingTime = parseInt(result.duration.text);
+      
+      return ({walkingDistance: walkingDistance, walkingTime: walkingTime});
+
+      $scope.$apply();
+    });
+  };
+
+  // add distance and time after arr has been populated
+  $scope.addDistanceTime = function (arr) {
+    // loop through places or events array
+    arr.forEach(function (item) {
+      // apply calculateDistance to each item
+      var distanceAndTime = $scope.calculateDistance(item.location);
+        // add walking time and walking distance property to each item
+        item.distanceAndTime = distanceAndTime;
+    });
+  }
+
+
+  $scope.getFreePlaces = function () {
+    return $http({
+      method: 'GET',
+      url: "http://free4allapi.herokuapp.com/places"
+    })
+    .success(function (data) {
+      angular.forEach(data, function (item) {
+        $scope.freePlaces.push(item);
+      })
+    })
+  }
 
   $scope.getLocation = function () {
     navigator.geolocation.getCurrentPosition(function (position) {
@@ -19,9 +73,11 @@ angular.module('getFreeStuff.getDataController', [
         if (status == google.maps.GeocoderStatus.OK) {
           // gets area of address
           // this is liable to break because you can't guarantee same results...
-          $scope.address = results[2].address_components[0].long_name.toLowerCase();  
+          $scope.address = results[3].address_components[0].long_name.toLowerCase();  
+          $scope.address = 'hayward';
           console.log('address acquired!');
-          console.log($scope);   
+          console.log($scope.address);
+
           $scope.getFreeStuff();  
         } 
       });
@@ -52,8 +108,11 @@ angular.module('getFreeStuff.getDataController', [
       return location.match(regex) ? result : false;
     }
 
+
     // loop through freeStuff
     angular.forEach($scope.freeStuff, function (item) {
+      console.log(item.location);
+      console.log($scope.address);
       if (matching($scope.address, item.location)) {
         $scope.filtered.push(item);
       }
