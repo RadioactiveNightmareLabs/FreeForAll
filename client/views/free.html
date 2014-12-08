@@ -1,6 +1,10 @@
 <div class="freeContainer">
   <div ng-controller="getDataController" style="background-color:#ff0000;" >
     <div class="container">
+    <button ng-click="getLocation()">getLocation</button>
+    <button ng-click="getFreeStuff()">getStuff</button>
+    <button ng-click="freeArea()">freeArea</button>
+
       <div ng-repeat="object in filtered">
         <div class='items' style="height: 40px; width: 100%; border-top: solid #000000; border-width: 1px">
           <div style="background-color:#ff0000; line-height: 40px; width: 50%; height: 100%; float: left; color: white; vertical-align: middle; font-size: 1em;"> {{ object.name }} </div>
