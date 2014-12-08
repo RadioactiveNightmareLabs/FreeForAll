@@ -1,22 +1,23 @@
-angular.module('seekFreeStuff.services', [])
+angular.module('getFreeStuff.services', [])
 
-.factory('getData', function ($http) {
+.factory('getFree', function ($http) {
 
-  var freeStuff = {};
+  var freeStuff = [];
 
-  var getFreeData = function(){
+  var getFreeStuff = function ( ) {
     return $http({
       method: 'GET',
       url: 'http://free4allapi.herokuapp.com/things'
     })
-    .then(function (res) {
-      console.log('haz data: ', res);
-      freeStuff.results = res.data;
+    .success(function (data) {
+      angular.forEach(data, function (item) {
+        freeStuff.push(item);  
+      });
+      return freeStuff;
     });
   };
 
-  return {
-    data: freeStuff,
-    getFreeData: getFreeData
-  };
-})
+  return { freeStuff: freeStuff, getFreeStuff: getFreeStuff };
+});
+
+// move google api here

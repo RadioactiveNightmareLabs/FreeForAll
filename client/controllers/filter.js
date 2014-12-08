@@ -1,5 +1,5 @@
-angular.module('freeFilter', []).
-filter('byType', function () {
+angular.module('freeFilter', [])
+.filter('byType', function () {
     return function (free, type) {
         var items = {
             type: type,

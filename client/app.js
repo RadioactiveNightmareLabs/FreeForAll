@@ -1,27 +1,27 @@
-//Seek Nature App
 angular.module('seekFreeStuff',[
-  'seekFreeStuff.data',
   'ui.router',
-  'snap',
-  ])
-//snapper options
-  .config(function(snapRemoteProvider) {
+  'getFreeStuff.getDataController',
+  'getFreeStuff.services',
+  'seekFreeStuff.data',
+  'snap'
+])
+.config(function(snapRemoteProvider) {
     snapRemoteProvider.globalOptions = {
       disable: 'right',
       hyperextensible: 'false',
-      // ... others options
     }
-  })
+})
+
 // use HTML5 Geolocation API to grab current position
 .config(function($urlRouterProvider, $httpProvider, $stateProvider) {
 
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/icanhazfree');
 
   $stateProvider
-    .state('data', {
-      url: '/',
-      templateUrl: 'data/data.html',
-      controller: 'DataController'
+    .state('index', {
+      url: '/icanhazfree',
+      templateUrl: 'views/free.html',
+      controller: 'getDataController'
     })
 })
 // .run(function(Locator) {
