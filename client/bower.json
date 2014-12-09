@@ -10,6 +10,8 @@
     "jquery": "~2.0.3",
     "underscore": "~1.5.2",
     "angular-ui-router": "~0.2.13",
-    "angular-snap": "~1.6.0"
+    "angular-snap": "~1.6.0",
+    "ngFx": "~1.0.5",
+    "bootstrap": "~3.3.1"
   }
 }

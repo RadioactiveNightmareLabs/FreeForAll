@@ -3,7 +3,8 @@ angular.module('seekFreeStuff',[
   'getFreeStuff.getDataController',
   'getFreeStuff.services',
   'seekFreeStuff.data',
-  'snap'
+  'snap',
+  'ngFx'
 ])
 .config(function(snapRemoteProvider) {
     snapRemoteProvider.globalOptions = {
@@ -14,9 +15,8 @@ angular.module('seekFreeStuff',[
 
 // use HTML5 Geolocation API to grab current position
 .config(function($urlRouterProvider, $httpProvider, $stateProvider) {
-
   $urlRouterProvider.otherwise('/icanhazfree');
-
+  
   $stateProvider
     .state('index', {
       url: '/icanhazfree',
@@ -24,9 +24,3 @@ angular.module('seekFreeStuff',[
       controller: 'getDataController'
     })
 })
-// .run(function(Locator) {
-//     if (!navigator.geolocation){
-//     output.innerHTML = "<p>Geolocation is not supported by your browser :(</p>";
-//     return;
-//   }
-// });
