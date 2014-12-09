@@ -3,7 +3,8 @@ angular.module('seekFreeStuff',[
   'getFreeStuff.getDataController',
   'getFreeStuff.services',
   'seekFreeStuff.data',
-  'snap'
+  'snap',
+  'ngFx'
 ])
 .config(function(snapRemoteProvider) {
     snapRemoteProvider.globalOptions = {
