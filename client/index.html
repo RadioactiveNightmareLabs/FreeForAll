@@ -1,48 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
   <head>
     <meta charset="utf-8" />
     <title>Free For All</title>
     <link href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.0/simplex/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
-    <link rel="stylesheet" href="styles/angular-snap.css" type="text/css" />
   </head>
-  <body ng-app='seekFreeStuff'>
+  <body>
 
-    <snap-drawer ng-controller="getDataController">
-  <button style="background:url(resources/close.png)" id="close" snap-close></button>
-  <div class="nav">
-    <h1>Categories</h1>
-    <ul>
-        <li><a ng-click="getLocation(getFreeStuff)">Stuff</a></li>
-        <li><a ng-click="getLocation(getFreeEvents)">Events</a></li>
-        <a ng-click="getLocation(getFreePlaces)">Places</a>
-    </ul>
-  </div>
-</snap-drawer>
-<snap-content snap-options="opts">
-  <button style="background: url(resources/burger.png)" id="burger" snap-toggle=""></button>
-    <h1>Freedom</h1>
     <div ui-view></div>
-</snap-content>
 
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<AIzaSyBCgGVk6a22vWMPte3jfp_u_ajHF9BWVb4>"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/bower_components/ngFx/dist/ngFx.js"></script>
     <script src="/bower_components/jquery/jquery.js"></script>
     <script src="/bower_components/underscore/underscore.js"></script>
-    <script src="/views/snap.js" type="text/javascript" charset="utf-8"></script>
-    <script src="/views/angular-snap.js" type="text/javascript" charset="utf-8"></script>
-    <script src="data/data.js" type="text/javascript" charset="utf-8"></script>
-    <script src="app.js"></script>
-    <script src="controllers/getDataController.js"></script>
-    <script src="controllers/services.js"></script>
-    <script src="/bower_components/ngFx/dist/ngFx.js"></script>
 
-    <div id='results'></div>
-    <div id="out"></div>
-    <!-- <img src="resources/powered-by-google/powered-by-google-on-white.png"> -->
+    <script src="app.module.js"></script>
+    <script src="/core/core.module.js"></script>
+    <script src="/core/config.js"></script>
+    <script src="/free/free.module.js"></script>
+    <script src="/free/FreeController.js"></script>    
+    <script src="/free/FreeFactory.js"></script>        
   </body>
 </html>
 
