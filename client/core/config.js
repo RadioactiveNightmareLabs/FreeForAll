@@ -8,12 +8,22 @@ angular
   function config($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 
     $stateProvider
-
+    
     .state('freeStuff', {
-      url: '/freeStuff',
-      templateUrl: 'app/free/free.html',
+      url:'/stuff',
+      templateUrl:'free/free.html',
+      controller:'FreeController as vm'
+    })
+
+    .state('foobar', {
+      url: '/test',
+      template: '<div>HEEEEEEEY</div>',
       controller: 'FreeController as vm'
     });
+
+
+    console.log('config');
+    $urlRouterProvider.otherwise('/');
   }
 
 }).call(this);

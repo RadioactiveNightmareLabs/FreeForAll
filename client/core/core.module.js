@@ -1,19 +1,19 @@
 (function() {
-    'use strict';
+  'use strict';
 
-    angular.module('app.core', [
-        /*
-         * Angular modules
-         */
-        'ui.router',
-        
-        /*
-         * Our reusable cross app code modules
-         */
-        /*
+  angular.module('app.core', [
+    /*
+     * Angular modules
+     */
+    'ui.router',
 
-         * 3rd Party modules
-         */
-         'ngFx'
-    ]);
+    /*
+     * Our reusable cross app code modules
+     */
+    /*
+
+     * 3rd Party modules
+     */
+    'ngFx'
+  ]);
 })();
