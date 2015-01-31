@@ -2,15 +2,20 @@
   "name": "node-js-getting-started",
   "version": "0.1.2",
   "description": "A sample Node.js app using Express 4",
-  "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node server/server.js",
+    "postinstall": "./node_modules/bower/bin/bower install"
   },
   "dependencies": {
-    "express": "~4.9.x"
+    "body-parser": "^1.11.0",
+    "cookie-parser": "^1.3.3",
+    "express": "^4.9.8",
+    "morgan": "^1.5.1",
+    "path": "^0.11.14"
   },
   "engines": {
-    "node": "0.10.x"
+    "node": "0.10.x",
+    "npm": "2.3.0"
   },
   "repository": {
     "type": "git",
@@ -21,5 +26,13 @@
     "heroku",
     "express"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/heroku/node-js-getting-started/issues"
+  },
+  "homepage": "https://github.com/heroku/node-js-getting-started",
+  "author": "",
+  "devDependencies": {
+    "nodemon": "^1.3.5"
+  }
 }

@@ -1,7 +1,7 @@
 {
   "name": "seek-nature",
   "version": "0.0.1",
-  "authors": "Charlie Depman",
+  "authors": "Jonathan Arnaldo",
   "license": "MIT",
   "dependencies": {
     "angular": "~1.2.18",

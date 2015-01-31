@@ -1,5 +1,5 @@
 ;(function () {
-'use strict';
+'use strict'
 
 angular
   .module('app.core')
@@ -10,17 +10,10 @@ angular
     $stateProvider
     
     .state('freeStuff', {
-      url:'/stuff',
-      templateUrl:'free/free.html',
+      url:'/',
+      templateUrl:'/free/free.html',
       controller:'FreeController as vm'
     })
-
-    .state('foobar', {
-      url: '/test',
-      template: '<div>HEEEEEEEY</div>',
-      controller: 'FreeController as vm'
-    });
-
 
     console.log('config');
     $urlRouterProvider.otherwise('/');
