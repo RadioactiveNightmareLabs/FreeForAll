@@ -4,21 +4,47 @@ var path = require('path');
 var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-// var dir = path.resolve(__dirname + '/client');
+var http = require('http');
+var request = require('request');
 var app = express();
 
 app.set('port', (process.env.PORT || 5000));
-
 
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/.././client'));
 
-// Routes
-app.get('*', function(req, res, next) {
-  console.log('worked!');
+// ROUTES
+app.get('/', function(req, res, next) {
+  console.log('home');
   res.sendFile('/index.html');
+  res.end();
+});
+
+app.get('/places', function(req, res, next) {
+  console.log('getting places...');
+  http.get('http://free4allapi.herokuapp.com/places', function(res) {
+    console.log('Got response: ' + res.statusCode);
+  }).on('error', function(e) {
+    console.log("Got error: " + e.message);
+  });
+  
+});
+
+// GET FREE STUFF
+
+
+app.get('/foo', function (req, res, next) {
+  console.log('places!');
+  request('https://free4allapi.herokuapp.com/places', function (err, res, body) {
+    if (!err && res.statusCode === 200) {
+      console.log(body);
+    }
+  })
+  
 })
+
+
 
 
 

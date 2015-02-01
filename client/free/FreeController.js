@@ -2,23 +2,18 @@
   'use strict';
   
   angular
-    .module('app.free')
-    .controller('FreeController', FreeController);
+  .module('app.free')
+  .controller('FreeController', FreeController);
 
-    FreeController.$inject = ['FreeFactory','$scope', '$rootScope', '$stateParams', '$q', '$timeout', '$http'];
+  FreeController.$inject = ['FreeFactory','$scope', '$rootScope', '$stateParams', '$q', '$timeout', '$http'];
 
-    function FreeController(FreeFactory, $scope, $rootScope, $stateParams, $q, $timeout, $http){
-      var vm = this;
-      vm.things = [];
-      vm.places = [];
-      vm.events = [];
+  function FreeController(FreeFactory, $scope, $rootScope, $stateParams, $q, $timeout, $http){
+    var vm = this;
 
-      function initialize() {
-        FreeFactory.freeApi('places');
-      }
-      
-      initialize();
-    }
+    console.log(FreeFactory);
+    FreeFactory.getPlaces();
+
+  }
 })();
     
 

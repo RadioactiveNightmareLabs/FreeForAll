@@ -1,39 +1,31 @@
 (function() {
 
   angular
-    .module('app.free')
-    .factory('FreeFactory', FreeFactory);
+  .module('app.free')
+  .factory('FreeFactory', FreeFactory);
 
-  function FreeFactory($http, $q,$timeout){
-
-    var things = [];
-    var places = [];
-    var events = [];
+  function FreeFactory($http, $q, $timeout){
 
     var services = {
-      getFree: getFree,
-      freeApi: freeApi
+      getPlaces: getPlaces
     }
 
     return services;
 
-    function getFree (type) {
-      console.log(type);
+    function getPlaces() {
+      return $http({
+        url: '/places',
+        method: 'GET'
+      })
+      .success(function(data) {
+        console.log('places gotten!');
+        console.log(data);
+      })
+      .error(function() {
+        console.log('error');
+      })
     }
-
-    function freeApi (type) {
-      $http.get('http://free4allapi.herokuapp.com/' + type)
-        .success(function(data, status, headers, config) {
-          // clear array
-          console.log(type + 'data received');
-          type = [];
-          type.push(data);
-          getFree(type);
-        })
-        .error(function(data, status, headers, config) {
-          console.log(status);
-        });
-    }
+    
     
   }
 })();
