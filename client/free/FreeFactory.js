@@ -13,16 +13,24 @@
     return services;
 
     function getPlaces() {
-      return $http({
-        url: '/places',
-        method: 'GET'
-      })
-      .success(function(data) {
-        console.log('places gotten!');
+      console.log('getting places...');
+
+      // $http({
+      //   url: '/places',
+      //   method: 'GET'
+      // })
+      // .success(function(data, status, headers, config) {
+      //   console.log(status);
+      // })
+      // .error(function(data, status, headers, config) {
+      //   console.log('error');
+      // })
+
+      $http.get('/places').success(function(data) {
         console.log(data);
-      })
-      .error(function() {
-        console.log('error');
+        console.log('recieved data')
+      }).error(function () {
+        console.log('asdf');
       })
     }
     

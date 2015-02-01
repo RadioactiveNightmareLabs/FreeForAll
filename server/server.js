@@ -22,30 +22,14 @@ app.get('/', function(req, res, next) {
 });
 
 app.get('/places', function(req, res, next) {
-  console.log('getting places...');
-  http.get('http://free4allapi.herokuapp.com/places', function(res) {
-    console.log('Got response: ' + res.statusCode);
-  }).on('error', function(e) {
-    console.log("Got error: " + e.message);
-  });
-  
-});
-
-// GET FREE STUFF
-
-
-app.get('/foo', function (req, res, next) {
-  console.log('places!');
-  request('https://free4allapi.herokuapp.com/places', function (err, res, body) {
-    if (!err && res.statusCode === 200) {
-      console.log(body);
-    }
+  var data = '';
+  request('http://free4allapi.herokuapp.com/places', function(err, response, body) {
+    // console.log(response.body);
+    data += response.body;
+    res.send(data);
   })
-  
-})
 
-
-
+});
 
 
 // development error handler

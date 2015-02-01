@@ -10,7 +10,6 @@
   function FreeController(FreeFactory, $scope, $rootScope, $stateParams, $q, $timeout, $http){
     var vm = this;
 
-    console.log(FreeFactory);
     FreeFactory.getPlaces();
 
   }
