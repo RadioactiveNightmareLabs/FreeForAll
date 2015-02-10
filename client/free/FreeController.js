@@ -25,7 +25,20 @@
         longitude: obj.location.lng,
         id: id
       }
-      return marker
+
+      marker.options = {
+        draggable: true,
+        labelContent: "woot",
+        labelAnchor: "100 0",
+        labelClass: "marker-labels"
+      };
+      return marker;
+    }
+
+    $scope.events = {
+      'click': function(Marker, eventName, model, args) {
+        console.log(Marker);
+      }
     }
 
     function init() {
