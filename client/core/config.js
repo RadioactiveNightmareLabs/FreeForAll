@@ -15,7 +15,7 @@ angular
       controller:'FreeController as vm'
     })
 
-    // $urlRouterProvider.otherwise('/');
+    $locationProvider.html5Mode(true)
   }
 
 }).call(this);

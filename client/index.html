@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <base href="/">
     <meta charset="utf-8" />
     <title>Free For All</title>
     <link href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.0/simplex/bootstrap.min.css" rel="stylesheet">
@@ -8,10 +9,11 @@
   </head>
   <body ng-app="app">
 
-    <div>test</div>
     <div ui-view></div>
-
+    
+    <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
     <script src="/components/angular/angular.js"></script>
+    <script src="/components/angular-google-maps/dist/angular-google-maps.min.js"></script>
     <script src="/components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="/components/ngFx/dist/ngFx.js"></script>
     <script src="/components/jquery/jquery.js"></script>

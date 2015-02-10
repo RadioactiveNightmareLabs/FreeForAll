@@ -22,13 +22,17 @@ app.get('/', function(req, res, next) {
 });
 
 app.get('/places', function(req, res, next) {
-  var data = '';
   request('http://free4allapi.herokuapp.com/places', function(err, response, body) {
-    // console.log(response.body);
-    data += response.body;
+    var data = response.body;
     res.send(data);
   })
+});
 
+app.get('/events', function(req, res, next) {
+  request('http://free4allapi.herokuapp.com/events', function(err, response, body) {
+    var data = response.body;
+    res.send(data);
+  })
 });
 
 
