@@ -1,11 +1,7 @@
 {
-  "name": "node-js-getting-started",
+  "name": "free4all",
   "version": "0.1.2",
-  "description": "A sample Node.js app using Express 4",
-  "scripts": {
-    "start": "node server/server.js",
-    "postinstall": "bower install"
-  },
+  "description": "free stuff around the bay area",
   "dependencies": {
     "body-parser": "^1.11.0",
     "cookie-parser": "^1.3.3",
@@ -16,13 +12,13 @@
     "path": "^0.11.14",
     "request": "^2.51.0"
   },
+  "scripts": {
+    "start": "node server/server.js",
+    "postinstall": "bower install"
+  },
   "engines": {
     "node": "0.10.x",
     "npm": "2.3.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
   },
   "keywords": [
     "node",
@@ -33,8 +29,7 @@
   "bugs": {
     "url": "https://github.com/heroku/node-js-getting-started/issues"
   },
-  "homepage": "https://github.com/heroku/node-js-getting-started",
-  "author": "",
+  "author": "jonathan arnaldo",
   "devDependencies": {
     "nodemon": "^1.3.5"
   }

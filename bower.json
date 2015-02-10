@@ -1,10 +1,17 @@
 {
-  "name": "seek-nature",
+  "name": "free4all",
   "version": "0.0.1",
   "authors": "Jonathan Arnaldo",
   "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
   "dependencies": {
-    "angular": "~1.2.18",
+    "angular": "~1.3.11",
     "angular-route": "~1.2.18",
     "angular-mocks": "~1.2.18",
     "jquery": "~2.0.3",
