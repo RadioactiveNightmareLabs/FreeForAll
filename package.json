@@ -3,8 +3,7 @@
   "version": "0.1.2",
   "description": "A sample Node.js app using Express 4",
   "scripts": {
-    "start": "node server/server.js",
-    "postinstall": "bower install"
+    "start": "node server/server.js"
   },
   "dependencies": {
     "body-parser": "^1.11.0",
