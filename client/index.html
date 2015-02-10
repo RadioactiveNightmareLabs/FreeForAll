@@ -4,12 +4,22 @@
     <base href="/">
     <meta charset="utf-8" />
     <title>Free For All</title>
-    <link href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.0/simplex/bootstrap.min.css" rel="stylesheet">
+    <link href="/components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
   </head>
   <body ng-app="app">
 
-    <div ui-view></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="list" ui-view="list"></div>
+        </div>
+        <div class="col-lg-6">
+          <div ui-view="map"></div>
+        </div>
+      </div>
+    </div>
+   
     
     <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
     <script src="/components/angular/angular.js"></script>
@@ -24,7 +34,10 @@
     <script src="/core/config.js"></script>
     <script src="/free/free.module.js"></script>
     <script src="/free/FreeController.js"></script>    
-    <script src="/free/FreeFactory.js"></script>        
+    <script src="/free/FreeFactory.js"></script>
+    <script src="/map/map.module.js"></script>
+    <script src="/map/MapController.js"></script>    
+    <script src="/map/MapFactory.js"></script>        
   </body>
 </html>
 

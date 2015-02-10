@@ -5,5 +5,14 @@ body, html{
   background-color: rgb(245,245,245);
 }
 
-.angular-google-map-container { height: 400px; }
+.angular-google-map-container { 
+  height: 500px; 
+  width: 100%;
+}
+
+.list {
+  height: 900px;
+  overflow: scroll;
+
+}
 

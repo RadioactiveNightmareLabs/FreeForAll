@@ -11,8 +11,16 @@ angular
     
     .state('freeStuff', {
       url:'/',
-      templateUrl:'/free/free.html',
-      controller:'FreeController as vm'
+      views: {
+        'list': {
+          templateUrl:'/free/free.html',
+          controller:'FreeController as vm'
+        },
+        'map': {
+          templateUrl:'/map/map.html',
+          controller:'FreeController as vm' 
+        }
+      }
     })
 
     $locationProvider.html5Mode(true)

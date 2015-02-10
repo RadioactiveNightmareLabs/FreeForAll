@@ -7,6 +7,7 @@
     /*
      * Feature areas
      */
-    'app.free'
+    'app.free',
+    'app.map'
   ]);
 })();
