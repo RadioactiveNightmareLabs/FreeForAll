@@ -1,51 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <base href="/">
     <meta charset="utf-8" />
     <title>Free For All</title>
-    <link href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.0/simplex/bootstrap.min.css" rel="stylesheet">
+    <link href="/components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
-    <link rel="stylesheet" href="styles/angular-snap.css" type="text/css" />
   </head>
-  <body ng-app='seekFreeStuff'>
+  <body ng-app="app">
 
-    <snap-drawer ng-controller="getDataController">
-      <button style="background:url(resources/close.png)" id="close" snap-close></button>
-      <div class="nav">
-        <h1>Categories</h1>
-        <ul>
-            <li><a ng-click="getFreeStuff()">Free stuff</a></li>
-            <li>Events</li>
-            <li>Art & Museums</li>
-            <li>Music Festivals</li>
-            <li>Free Food</li>
-        </ul>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="list" ui-view="list"></div>
+        </div>
+        <div class="col-lg-6">
+          <div ui-view="map"></div>
+        </div>
       </div>
-    </snap-drawer>
-    <snap-content snap-options="opts">
-      <button style="background: url(resources/burger.png)" id="burger" snap-toggle=""></button>
-        <div ui-view></div>
-    </snap-content>
-
+    </div>
+   
     
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<AIzaSyBCgGVk6a22vWMPte3jfp_u_ajHF9BWVb4>"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
-    <script src="/bower_components/angular/angular.js"></script>
-    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="/bower_components/jquery/jquery.js"></script>
-    <script src="/bower_components/underscore/underscore.js"></script>
-    <script src="/views/snap.js" type="text/javascript" charset="utf-8"></script>
-    <script src="/views/angular-snap.js" type="text/javascript" charset="utf-8"></script>
-    <script src="data/data.js" type="text/javascript" charset="utf-8"></script>
-    <script src="app.js"></script>
-    <script src="controllers/getDataController.js"></script>
-    <script src="controllers/services.js"></script>
+    <script src='/maps.googleapis.com/maps/api/js?sensor=false'></script>
+    <script src="/components/angular/angular.js"></script>
+    <script src="/components/angular-google-maps/dist/angular-google-maps.min.js"></script>
+    <script src="/components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/components/ngFx/dist/ngFx.js"></script>
+    <script src="/components/jquery/jquery.js"></script>
+    <script src="/components/underscore/underscore.js"></script>
 
-
-    
-    <div id='results'></div>
-    <div id="out"></div>
-    <!-- <img src="resources/powered-by-google/powered-by-google-on-white.png"> -->
+    <script src="app.module.js"></script>
+    <script src="/core/core.module.js"></script>
+    <script src="/core/config.js"></script>
+    <script src="/free/free.module.js"></script>
+    <script src="/free/FreeController.js"></script>    
+    <script src="/free/FreeFactory.js"></script>
+    <script src="/map/map.module.js"></script>
+    <script src="/map/MapController.js"></script>    
+    <script src="/map/MapFactory.js"></script>        
   </body>
 </html>
 

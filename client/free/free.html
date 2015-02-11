@@ -1,0 +1,10 @@
+<div><h1>Free stuff!</h1></div>
+<ul class="list-unstyled" ng-repeat="free in vm.free">
+  <li class="fx-fade-down">
+    <h4>{{ free.name }}</h4>
+    <a href="{{ vm.href }}">details</a>
+    {{ free.date }}
+    {{ free.type }}
+  </li>
+</ul>
+
